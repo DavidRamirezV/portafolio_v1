@@ -1,29 +1,31 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
- <BoostrapTest/>
+  <div>
+    <NavbarBase/>
+    <!--
+      <img alt="Vue logo" src="./assets/logo.png">
+      <HelloWorld msg="Welcome to Your Vue.js App" />
+    -->
+    
+    <TopParallax/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import BoostrapTest from './components/BoostrapTest.vue'
+//import HelloWorld from './components/HelloWorld.vue'
+import NavbarBase from './components/structure/NavbarBase.vue'
+import TopParallax from './components/parallax/TopParallax.vue'
+//import BoostrapTest from './components/BoostrapTest.vue'
+//import ImageCarousel from './components/Images/ImageCarousel.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    BoostrapTest
+    NavbarBase,
+    TopParallax,
+
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
