@@ -6,28 +6,32 @@
         <!--
   Top
  -->
-        <div class="row py-5 m-3">
-          <img src="./assets/img/profile_magenta.png" id="profileimg" class="card-img-top" alt="Profile">
+        <div class="row pt-5 pb-3 mt-3 mx-3">
+          <img src="./assets/img/profile.gif" id="profileimg" class="card-img-top rounded-circle" alt="Profile">
+          <h4 class="text-center pt-3">David Ramírez</h4>
+          <h6 class="text-center text-muted">Ingeniero Informático</h6>
         </div>
         <!--
   Middle
  -->
-        <div class="py-5">
-          <div class="pice-border">
-            <a class="btn" href="#"> TESTING 1</a>
+
+        <div class="pt-1">
+          <div class="pice-border my-3">
+            <a class="btn" href="#"  ref="sidebtn1"  @click="displayHandler(1)"> SOBRE MÍ</a>
           </div>
-          <div class="pice-border">
-            <a class="btn" href="#"> TESTING 2</a>
+          <div class="pice-border my-3">
+            <a class="btn" href="#"  ref="sidebtn2" @click="displayHandler(2)"> EDUCACIÓN</a>
           </div>
-          <div class="pice-border">
-            <a class="btn" href="#"> TESTING 3</a>
+          <div class="pice-border my-3">
+            <a class="btn" href="#"> CARRERA</a>
           </div>
-          <div class="pice-border">
-            <a class="btn" href="#"> test 4</a>
+          <div class="pice-border my-3">
+            <a class="btn" href="#"> PORTAFOLIO</a>
           </div>
-          <div class="pice-border">
-            <a class="btn" href="#"> test 5</a>
+          <div class="pice-border my-3">
+            <a class="btn" href="#"> CONTACTO</a>
           </div>
+
         </div>
         <!--
 Footer
@@ -50,24 +54,13 @@ Footer
 
         </div>
 
-
-
-
-
-
-
-
       </div>
-
 
       <div class="col-10">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ad dolore qui, repudiandae consequatur dolorum
-        quidem nihil neque iusto consectetur, veritatis provident asperiores, molestias officiis sapiente facere fuga
-        veniam maiores?
-
-
+        <AboutMePage v-if="display_1"/>
+        <EducationPage v-else-if="display_2"/>
+        <div v-else>Nothing to display</div>
       </div>
-
 
 
     </div>
@@ -75,22 +68,50 @@ Footer
   </div>
 
   <!--
-      <img alt="Vue logo" src="./assets/logo.png">
       <HelloWorld msg="Welcome to Your Vue.js App" />
     -->
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
+import AboutMePage from './components/structure/AboutMePage.vue'
+import EducationPage from './components/structure/EducationPage.vue'
 //import BoostrapTest from './components/BoostrapTest.vue'
-//import ImageCarousel from './components/Images/ImageCarousel.vue'
 
 export default {
+  
   name: 'App',
+  data(){
+    return{
+      display_1 :true,
+      display_2 :false,
+
+    }
+  },
   components: {
+    AboutMePage,
+    EducationPage
 
   },
   methods: {
+   
+    displayHandler: function (pressed){
+    
+      if (pressed==1){
+        if (this.display_1 == false ){
+          this.display_1 = true;
+          this.display_2 = false;
+        }
+        
+      }else if (pressed==2){
+        if (this.display_2 == false ){
+        this.display_1 = false;
+        this.display_2 = true;
+        }
+      }
+
+      //console.log("d1: " + this.display_1 +" d2:" + this.display_2 );
+      
+    }
   }
 }
 
@@ -101,6 +122,7 @@ export default {
 .body-default {
   background-color: #272727;
   color: #fff;
+  height: 100vh;
 }
 
 //SIDEBAR
@@ -116,9 +138,9 @@ export default {
   background: linear-gradient(90deg, rgba(250, 6, 252, 1) 0%, rgba(158, 61, 255, 1) 25%, rgba(0, 249, 255, 1) 50%, rgba(158, 61, 255, 1) 75%, rgba(250, 6, 252, 1) 100%);
   animation: gradient 55s linear infinite;
   width: 100%;
-  height: 2.5em;
+  height: 3.5em;
   max-height: 4em;
-  min-height: 2.5em;
+  min-height: 3em;
   position: relative;
   border-radius: 6.5px;
 }
@@ -142,11 +164,14 @@ export default {
   transform: translate(-50%, -50%);
   background-color: #000000;
   width: 99%;
+  height: 96%;
   background-image: linear-gradient(180deg, #272727 0%, #1f1f1f 100%);
   text-align: center;
   text-decoration: none;
   color: #fff;
   letter-spacing: 1px;
+  padding-top: 0.85em;
+  padding-bottom: 0.85em;
 
 }
 
