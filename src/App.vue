@@ -16,20 +16,20 @@
  -->
 
         <div class="pt-1">
-          <div class="pice-border my-3">
-            <a class="btn" href="#"  ref="sidebtn1"  @click="displayHandler(1)"> SOBRE MÍ</a>
+          <div class="pice-border my-3" id="sidebtn1">
+            <a class="btn"  @click="displayHandler(1)"> SOBRE MÍ</a>
           </div>
-          <div class="pice-border my-3">
-            <a class="btn" href="#"  ref="sidebtn2" @click="displayHandler(2)"> EDUCACIÓN</a>
+          <div class="pice-none my-3" id="sidebtn2">
+            <a class="btn"  @click="displayHandler(2)"> EDUCACIÓN</a>
           </div>
-          <div class="pice-border my-3">
-            <a class="btn" href="#"> CARRERA</a>
+          <div class="pice-none my-3" id="sidebtn3">
+            <a class="btn"  @click="displayHandler(3)"> CARRERA</a>
           </div>
-          <div class="pice-border my-3">
-            <a class="btn" href="#"> PORTAFOLIO</a>
+          <div class="pice-none my-3" id="sidebtn4">
+            <a class="btn"  @click="displayHandler(4)"> PORTAFOLIO</a>
           </div>
-          <div class="pice-border my-3">
-            <a class="btn" href="#"> CONTACTO</a>
+          <div class="pice-none my-3" id="sidebtn5">
+            <a class="btn"  @click="displayHandler(5)"> CONTACTO</a>
           </div>
 
         </div>
@@ -59,6 +59,9 @@ Footer
       <div class="col-10">
         <AboutMePage v-if="display_1"/>
         <EducationPage v-else-if="display_2"/>
+        <CareerPage v-else-if="display_3"/>
+        <PortfolioPage v-else-if="display_4"/>
+        <ContactPage v-else-if="display_5"/>
         <div v-else>Nothing to display</div>
       </div>
 
@@ -73,8 +76,13 @@ Footer
 </template>
 
 <script>
+import $ from 'jquery'
 import AboutMePage from './components/structure/AboutMePage.vue'
 import EducationPage from './components/structure/EducationPage.vue'
+import CareerPage from './components/structure/CareerPage.vue'
+import PortfolioPage from './components/structure/PortfolioPage.vue'
+import ContactPage from './components/structure/ContactPage.vue'
+
 //import BoostrapTest from './components/BoostrapTest.vue'
 
 export default {
@@ -82,34 +90,62 @@ export default {
   name: 'App',
   data(){
     return{
-      display_1 :true,
-      display_2 :false,
+      display_1 : true,
+      display_2 : false,
+      display_3 : false,
+      display_4 : false,
+      display_5 : false
 
     }
   },
   components: {
     AboutMePage,
-    EducationPage
+    EducationPage,
+    CareerPage,
+    PortfolioPage,
+    ContactPage
 
   },
   methods: {
    
     displayHandler: function (pressed){
-    
+      this.display_1 = false;
+      this.display_2 = false;
+      this.display_3 = false;
+      this.display_4 = false;
+      this.display_5 = false;
+      $('#sidebtn1,#sidebtn2,#sidebtn3,#sidebtn4,#sidebtn5').attr('class', 'pice-none my-3');
+        
       if (pressed==1){
         if (this.display_1 == false ){
-          this.display_1 = true;
-          this.display_2 = false;
+        $('#sidebtn1').attr('class', 'pice-border my-3')
+        this.display_1 = true;
         }
         
       }else if (pressed==2){
         if (this.display_2 == false ){
-        this.display_1 = false;
+        $('#sidebtn2').attr('class', 'pice-border my-3')
         this.display_2 = true;
         }
       }
-
-      //console.log("d1: " + this.display_1 +" d2:" + this.display_2 );
+      else if (pressed==3){
+        if (this.display_3 == false ){
+        $('#sidebtn3').attr('class', 'pice-border my-3')
+        this.display_3 = true;
+        }
+      }
+      else if (pressed==4){
+        if (this.display_4 == false ){
+        $('#sidebtn4').attr('class', 'pice-border my-3')
+        this.display_4 = true;
+        }
+      }
+      else if (pressed==5){
+        if (this.display_5 == false ){
+        $('#sidebtn5').attr('class', 'pice-border my-3')
+        this.display_5 = true;
+        }
+      }
       
     }
   }
@@ -119,98 +155,7 @@ export default {
 </script>
 
 <style lang="scss">
-.body-default {
-  background-color: #272727;
-  color: #fff;
-  height: 100vh;
-}
 
-//SIDEBAR
+@import './assets/styles/main.scss';
 
-.sidebar_st {
-  background-color: #1f1f1f;
-  height: 100vh;
-}
-
-//RGB LIGHT EFFECT
-.pice-border {
-  background: rgb(250, 6, 252);
-  background: linear-gradient(90deg, rgba(250, 6, 252, 1) 0%, rgba(158, 61, 255, 1) 25%, rgba(0, 249, 255, 1) 50%, rgba(158, 61, 255, 1) 75%, rgba(250, 6, 252, 1) 100%);
-  animation: gradient 55s linear infinite;
-  width: 100%;
-  height: 3.5em;
-  max-height: 4em;
-  min-height: 3em;
-  position: relative;
-  border-radius: 6.5px;
-}
-
-.pice-border::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  background: inherit;
-  filter: blur(6px);
-}
-
-.pice-border .btn {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #000000;
-  width: 99%;
-  height: 96%;
-  background-image: linear-gradient(180deg, #272727 0%, #1f1f1f 100%);
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  letter-spacing: 1px;
-  padding-top: 0.85em;
-  padding-bottom: 0.85em;
-
-}
-
-.pice-border .btn:hover {
-  color: #fff;
-  font-weight: bold;
-
-
-}
-
-
-@keyframes gradient {
-  0% {
-    background-position: 0 0;
-  }
-
-  50% {
-    background-position: 50em 50em;
-  }
-
-  100% {
-    background-position: 1em 5em;
-  }
-
-}
-
-//ZOOM
-.zoom {
-  transition: transform .2s;
-}
-
-.zoom:hover {
-  -ms-transform: scale(1.2);
-  /* IE 9 */
-  -webkit-transform: scale(1.2);
-  /* Safari 3-8 */
-  transform: scale(1.2);
-}
-
-
-//photo morph
 </style>
