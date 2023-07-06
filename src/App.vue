@@ -7,14 +7,14 @@
   Top
  -->
         <div class="row pt-5 pb-3 mt-3 mx-3">
-          <img src="./assets/img/profile.gif" id="profileimg" class="card-img-top rounded-circle" alt="Profile">
+          <img src="./assets/img/profile_6.png" id="profileimg" class="card-img-top rounded-circle zoom" alt="Profile">
           <h4 class="text-center pt-3">David Ramírez</h4>
           <h6 class="text-center text-muted">Ingeniero Informático</h6>
         </div>
         <!--
   Middle
  -->
-
+ 
         <div class="pt-1">
           <div class="pice-border my-3" id="sidebtn1">
             <a class="btn"  @click="displayHandler(1)"> SOBRE MÍ</a>
