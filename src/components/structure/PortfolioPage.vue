@@ -25,10 +25,10 @@
                 <div class="row pt-5">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination  justify-content-center">
-                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                            <li v-for="(pagina, index) in totalPaginas()" v-on:click="getDataPagina(pagina)" v-bind:key="index" v.bind:class="isActive()"
+                            <li class="page-item"><a class="page-link" v-on:click="getPreviousPage()" v-bind:class=" this.paginaActual == 1 ? 'disabled':''" href="#" >Previous</a></li>
+                            <li v-for="(pagina, index) in totalPaginas()" v-on:click="getDataPagina(pagina)" v-bind:key="index" v-bind:class="isActive(pagina)"
                                 class="page-item"><a class="page-link" href="#">{{ pagina }}</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            <li class="page-item"><a class="page-link" v-on:click="getNextPage()" v-bind:class=" this.paginaActual == totalPaginas() ? 'disabled':''" href="#">Next</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -59,7 +59,7 @@ export default {
                 "title": "Pixelart imagenes",
                 "year": "2023",
                 "imageurl":"https://thecatapi.com/api/images/get?format=src&type=gif",
-                "description": "Pequeño proyecto en Python para convertir imagenes e pixelart",
+                "description": "Pequeño proyecto en Python para convertir imagenes en pixelart",
                 "pageurl": "https://colab.research.google.com/drive/1Pu3XECGbHqt_gVEeSPLsM-92pjtk2DST?usp=sharing",
                 "languages": ["Python"]    
             },{
@@ -121,7 +121,8 @@ export default {
             }],
             elementosPorPagina: 6,
             datoPaginados: [],
-            paginaActual: 1
+            paginaActual: 1,
+            prevDisable: true
 
         }
     },
@@ -147,7 +148,7 @@ export default {
 
         },
         getNextPage() {
-            if (this.paginaActual > this.totalPaginas()) {
+            if (this.paginaActual < this.totalPaginas()) {
                 this.paginaActual++;
             }
             this.getDataPagina(this.paginaActual);
@@ -159,7 +160,21 @@ export default {
             } else {
                 return '';
             }
+        },
+        isPrevDisabled(noPagina){
+            if (noPagina == 1) {
+                return 'disabled';
+            } else {
+                return '';
+            }
 
+        },
+        isNextDisabled(noPagina){
+            if (noPagina == this.totalPaginas()) {
+                return 'disabled';
+            } else {
+                return '';
+            }
 
         }
 
