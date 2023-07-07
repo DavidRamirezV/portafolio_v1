@@ -7,7 +7,7 @@
         <div class="row separation-medium ">
             <div class="col box-padding">
 
-                <p data-text="David Ramírez" class="titletext titleanimation">
+                <p data-text="David Ramírez" class="titletext2 titleanimation">
                     David Ramírez
 
                 </p>
@@ -44,9 +44,9 @@ export default {
 </script>
 
 <style  lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Marcellus&family=Marcellus+SC&family=Open+Sans:wght@300&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Marcellus&family=Marcellus+SC&family=Open+Sans:wght@300&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 .titletext {
     font-family: 'Marcellus SC', serif;
     font-size: 100px;
@@ -66,5 +66,11 @@ export default {
     text-justify: inter-word;
 
 }
+.titletext2 {
+    font-family: 'Poppins', serif;
+    font-size: 100px;
+    letter-spacing: 0.5px;
+    padding-left: 0;
 
+}
 </style>
