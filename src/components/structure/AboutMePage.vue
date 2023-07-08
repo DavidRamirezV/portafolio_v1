@@ -8,22 +8,17 @@
             <div class="col box-padding">
 
                 <p data-text="David Ramírez" class="titletext2 titleanimation">
-                    David Ramírez
-
+                    {{this.myname}}
                 </p>
 
                 <p class="subtitletext mx-2">
-                    Ingeniero de Ejecución en Computación e Informática
+                    {{this.grade}}                    
                 </p>
-                <p class="basetext mx-2">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem quasi molestias facere
-                    aspernatur maiores, laboriosam itaque minus, autem assumenda labore quam. Consequuntur totam at magnam
-                    maxime perferendis illum sunt odio!
-           
+                <p class="basetext mx-2 type">
+                    {{this.about}}  
                 </p>
 
             </div>
-
 
         </div>
         
@@ -39,6 +34,17 @@
 <script>
 export default {
     name: 'AboutMePage',
+    data(){
+        return{
+            myname: "David Ramírez",
+            grade: "Ingeniero de Ejecución en Computación e Informática",
+            about:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem quasi molestias facere aspernatur maiores, laboriosam itaque minus, autem assumenda labore quam. Consequuntur totam at magnam maxime perferendis illum sunt odio",
+
+        }
+    },
+    methods:{
+
+    }
 
 }
 </script>

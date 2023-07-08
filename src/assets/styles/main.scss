@@ -1,4 +1,6 @@
-
+body{
+  background-color: #272727;
+}
 .body-default {
     background-color: #272727;
     color: #fff;
@@ -162,7 +164,70 @@
 
 .fade-in-image { animation: fadeIn 0.5s; }
 
+
+//NAVBAR
+
+.footerbar {
+  background-color: #1f1f1f;
+}
+
+
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+//media handler
+@media screen and (max-width: 320px) {
+  .sidebar_st { 
+    display: none;
+  } 
+  .main {
+    padding: 16px;
+    margin-top: 30px;
+    height: 1500px; /* Used in this example to enable scrolling */
+  }
+}
+
+@media screen and (max-width: 428px) {
+  .sidebar_st { 
+    display: none;
+  }
+  .main {
+    padding: 16px;
+    margin-top: 30px;
+    height: 1500px; /* Used in this example to enable scrolling */
+  }
+}
+@media screen and (max-width: 600px) {
+  .sidebar_st { 
+    display: none;
+  }
+  .main {
+    padding: 16px;
+    margin-top: 30px;
+    height: 1500px; /* Used in this example to enable scrolling */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar_st { 
+    display: none;
+  }
+  .main {
+    padding: 16px;
+    margin-top: 30px;
+    height: 1500px; /* Used in this example to enable scrolling */
+  }
+}
+@media screen and (max-width: 900px) {
+
+}
+
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 1200px) {
+
 }
