@@ -169,6 +169,7 @@ body{
 
 .footerbar {
   background-color: #1f1f1f;
+  display: none;
 }
 
 
@@ -181,6 +182,9 @@ body{
 @media screen and (max-width: 320px) {
   .sidebar_st { 
     display: none;
+  }
+  .footerbar { 
+    display: block;
   } 
   .main {
     padding: 16px;
@@ -193,6 +197,9 @@ body{
   .sidebar_st { 
     display: none;
   }
+  .footerbar { 
+    display: block;
+  } 
   .main {
     padding: 16px;
     margin-top: 30px;
@@ -203,6 +210,9 @@ body{
   .sidebar_st { 
     display: none;
   }
+  .footerbar { 
+    display: block;
+  } 
   .main {
     padding: 16px;
     margin-top: 30px;
@@ -214,6 +224,9 @@ body{
   .sidebar_st { 
     display: none;
   }
+  .footerbar { 
+    display: block;
+  } 
   .main {
     padding: 16px;
     margin-top: 30px;
@@ -229,5 +242,5 @@ body{
 }
 
 @media screen and (max-width: 1200px) {
-
+  
 }

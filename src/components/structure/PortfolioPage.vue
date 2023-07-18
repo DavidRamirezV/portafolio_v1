@@ -10,15 +10,17 @@
         <div class="row separation-medium">
             <div class="container-fluid ">
                 <div class="row row-cols-1 row-cols-md-3 g-4 px-2 mt-2">
-                    <div v-for="elemento in datoPaginados" v-bind:key="elemento.proyect_id" class="col-12 col-md-6 col-lg-4 mx-auto" style="width: 25rem;" >
-                        <div class="card text-center bg-dark ">
-                            <img v-bind:src=elemento.imageurl class="card-img-top"
+                    <div v-for="elemento in datoPaginados" v-bind:key="elemento.proyect_id" class="col-12 col-md-6 col-lg-4 mx-auto" style="width: 25rem;" v-on:click="goToUrl(elemento.pageurl)"  >
+                        <div class="card text-center bg-dark " > 
+                            <img v-bind:src=elemento.imageurl class="card-img-top" 
                                 alt="...">
-                            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+                            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end" >
                                 <h4 class="card-title text-border-custom">{{elemento.title}}</h4>
                                 <p class="card-text text-border-custom">{{elemento.description}}</p>
                             </div>
                         </div>
+
+                        
                     </div>
                 </div>
 
@@ -55,6 +57,15 @@ export default {
     data() {
         return {
             lista: [{
+                "proyect_id": 0,
+                "title": "Pixelar imagenes",
+                "year": "2023",
+                "imageurl":"https://i.ibb.co/m8ydq38/Pixelart.png",
+                "description": "Pequeño proyecto en Python para convertir imagenes en pixelart",
+                "pageurl": "https://colab.research.google.com/drive/1Pu3XECGbHqt_gVEeSPLsM-92pjtk2DST?usp=sharing",
+                "languages": ["Python"]    
+            }],
+            lista_dummy: [{
                 "proyect_id": 0,
                 "title": "Pixelart imagenes",
                 "year": "2023",
@@ -130,6 +141,9 @@ export default {
         this.getDataPagina(1);
     },
     methods: {
+        goToUrl(url) {
+            window.open(url, '_blank');
+        },
         totalPaginas() {
             return Math.ceil(this.lista.length / this.elementosPorPagina)
         },

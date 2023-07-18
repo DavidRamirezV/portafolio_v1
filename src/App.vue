@@ -1,11 +1,19 @@
 <template>
-<nav class="navbar navbar-expand-sm footerbar fixed-bottom justify-content-center py-3">
-  <a class="btn btn-primary rounded-circle btn-lg mx-2" @click="displayHandler(1)"><i class="bi bi-person-fill"></i></a>
-  <a class="btn btn-primary rounded-circle btn-lg mx-2" @click="displayHandler(2)"> <i class="bi bi-mortarboard-fill"></i></a>
-  <a class="btn btn-primary rounded-circle btn-lg mx-2" @click="displayHandler(3)"> <i class="bi bi-briefcase-fill"></i></a>
-  <a class="btn btn-primary rounded-circle btn-lg mx-2" @click="displayHandler(4)"> <i class="bi bi-file-earmark-code-fill"></i></a>
-  <a class="btn btn-primary rounded-circle btn-lg mx-2" @click="displayHandler(5)"> <i class="bi bi-envelope-at-fill"></i></a>
-</nav>
+  <div class="footerbar">
+    <nav class="navbar navbar-expand-sm  fixed-bottom justify-content-center py-3">
+      <a class="btn btn-primary rounded-circle btn-lg mx-2" @click="displayHandler(1)"><i
+          class="bi bi-person-fill"></i></a>
+      <a class="btn btn-primary rounded-circle btn-lg mx-2" @click="displayHandler(2)"> <i
+          class="bi bi-mortarboard-fill"></i></a>
+      <a class="btn btn-primary rounded-circle btn-lg mx-2" @click="displayHandler(3)"> <i
+          class="bi bi-briefcase-fill"></i></a>
+      <a class="btn btn-primary rounded-circle btn-lg mx-2" @click="displayHandler(4)"> <i
+          class="bi bi-file-earmark-code-fill"></i></a>
+      <a class="btn btn-primary rounded-circle btn-lg mx-2" @click="displayHandler(5)"> <i
+          class="bi bi-envelope-at-fill"></i></a>
+    </nav>
+  </div>
+
   <div class="container-fluid body-default">
     <div class="row ">
       <div class="col-2 sidebar_st">
@@ -17,6 +25,24 @@
           <h4 class="text-center pt-3">David Ramírez</h4>
           <h6 class="text-center text-muted">Ingeniero Informático</h6>
         </div>
+
+        <div class="row">
+          <div class="card-footer text-muted py-3">
+            <div class="row text-center mx-4">
+              <div class="col">
+                <a href="https://www.linkedin.com/in/david-antonio-ramirez-vicuna/" target="_blank">
+                  <img src="./assets/img/linkedin.png" alt="Linkedin" height="50px" class="zoom">
+                </a>
+              </div>
+              <div class="col">
+                <a href="https://github.com/DavidRamirezV" target="_blank">
+                  <img src="./assets/img/github.png" alt="GitHub" height="50px" class="zoom">
+                </a>
+              </div>
+            </div>
+          </div>       
+        </div>
+
         <!--
   Middle
  -->
@@ -42,24 +68,7 @@
         <!--
 Footer
  -->
-        <div class="row">
-          <div class="card-footer text-muted py-3">
-            <div class="row text-center mx-4">
-              <div class="col">
-                <a href="https://www.linkedin.com/in/david-antonio-ramirez-vicuna/" target="_blank">
-                  <img src="./assets/img/linkedin.png" alt="Linkedin" height="50px" class="zoom">
-                </a>
-              </div>
-              <div class="col">
-                <a href="https://github.com/DavidRamirezV" target="_blank">
-                  <img src="./assets/img/github.png" alt="GitHub" height="50px" class="zoom">
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
+        
       </div>
 
       <div class="col-10">

@@ -38,7 +38,7 @@ export default {
         return{
             myname: "David Ramírez",
             grade: "Ingeniero de Ejecución en Computación e Informática",
-            about:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem quasi molestias facere aspernatur maiores, laboriosam itaque minus, autem assumenda labore quam. Consequuntur totam at magnam maxime perferendis illum sunt odio",
+            about:"SITIO WEB EN DESARROLLO",
 
         }
     },
