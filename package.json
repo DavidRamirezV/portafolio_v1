@@ -14,7 +14,8 @@
     "bootstrap-icons": "^1.10.5",
     "core-js": "^3.8.3",
     "jquery": "^3.7.0",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vue-fab": "^2.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

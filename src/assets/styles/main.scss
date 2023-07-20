@@ -178,13 +178,49 @@ body{
   100% { opacity: 1; }
 }
 
-//media handler
+
+//ABOUT PAGE-------------------------------
+
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Marcellus&family=Marcellus+SC&family=Open+Sans:wght@300&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+.titletext {
+    font-family: 'Marcellus SC', serif;
+    font-size: 100px;
+    letter-spacing: 0.5px;
+    padding-left: 0;
+}
+
+.subtitletext {
+    font-family: 'Marcellus', serif;
+    font-size: 30px;
+}
+
+.basetext {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+
+}
+.titletext2 {
+    font-family: 'Poppins', serif;
+    font-size: 100px;
+    letter-spacing: 0.5px;
+    padding-left: 0;
+
+}
+
+
+
+//media handler-------------------------
 @media screen and (max-width: 320px) {
   .sidebar_st { 
     display: none;
   }
   .footerbar { 
     display: block;
+    background-color: coral;
   } 
   .main {
     padding: 16px;
@@ -192,6 +228,7 @@ body{
     height: 1500px; /* Used in this example to enable scrolling */
   }
 }
+
 
 @media screen and (max-width: 428px) {
   .sidebar_st { 
@@ -216,8 +253,13 @@ body{
   .main {
     padding: 16px;
     margin-top: 30px;
-    height: 1500px; /* Used in this example to enable scrolling */
+    height: 1500px; /* Used in this example to enable scrolling */ 
   }
+
+}
+
+.row{
+  justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
@@ -232,6 +274,20 @@ body{
     margin-top: 30px;
     height: 1500px; /* Used in this example to enable scrolling */
   }
+  .titletext2{
+    font-size: 80px;
+  }
+  .subtitletext{
+    font-size: 25px;
+  }
+
+  .basetext{
+    font-size: 16px;
+  }
+  .fab-container{
+    display: flex;
+  }
+ 
 }
 @media screen and (max-width: 900px) {
 

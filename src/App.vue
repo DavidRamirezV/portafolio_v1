@@ -1,19 +1,5 @@
 <template>
-  <div class="footerbar">
-    <nav class="navbar navbar-expand-sm  fixed-bottom justify-content-center py-3">
-      <a class="btn btn-primary rounded-circle btn-lg mx-2" @click="displayHandler(1)"><i
-          class="bi bi-person-fill"></i></a>
-      <a class="btn btn-primary rounded-circle btn-lg mx-2" @click="displayHandler(2)"> <i
-          class="bi bi-mortarboard-fill"></i></a>
-      <a class="btn btn-primary rounded-circle btn-lg mx-2" @click="displayHandler(3)"> <i
-          class="bi bi-briefcase-fill"></i></a>
-      <a class="btn btn-primary rounded-circle btn-lg mx-2" @click="displayHandler(4)"> <i
-          class="bi bi-file-earmark-code-fill"></i></a>
-      <a class="btn btn-primary rounded-circle btn-lg mx-2" @click="displayHandler(5)"> <i
-          class="bi bi-envelope-at-fill"></i></a>
-    </nav>
-  </div>
-
+  <FloatingActionButton v-on:handlerData="updateDisplay"/>
   <div class="container-fluid body-default">
     <div class="row ">
       <div class="col-2 sidebar_st">
@@ -63,12 +49,13 @@
           <div class="pice-none my-3" id="sidebtn5">
             <a class="btn" @click="displayHandler(5)"> CONTACTO</a>
           </div>
+          
 
         </div>
         <!--
 Footer
  -->
-        
+ 
       </div>
 
       <div class="col-10">
@@ -97,7 +84,7 @@ import EducationPage from './components/structure/EducationPage.vue'
 import CareerPage from './components/structure/CareerPage.vue'
 import PortfolioPage from './components/structure/PortfolioPage.vue'
 import ContactPage from './components/structure/ContactPage.vue'
-
+import FloatingActionButton from './components/others/FloatingActionButton.vue'
 //import BoostrapTest from './components/BoostrapTest.vue'
 
 export default {
@@ -118,10 +105,13 @@ export default {
     EducationPage,
     CareerPage,
     PortfolioPage,
-    ContactPage
+    ContactPage,
+    FloatingActionButton
 
   },
   methods: {
+
+   
 
     displayHandler: function (pressed) {
       this.display_1 = false;
@@ -162,7 +152,11 @@ export default {
         }
       }
 
-    }
+    },
+
+    updateDisplay(newData){
+      this.displayHandler(newData);
+    },
   }
 }
 
