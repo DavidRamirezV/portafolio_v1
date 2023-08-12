@@ -196,6 +196,12 @@ body{
     font-size: 30px;
 }
 
+.warningtext {
+  font-size: 30px;
+  color: #000000;
+  background-color: #ffc21c;
+}
+
 .basetext {
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
@@ -211,7 +217,39 @@ body{
 
 }
 
+//COLORS
 
+$magenta_custom: rgb(250, 6, 252,);
+$purple_custom: rgb(158, 61, 255);
+$cian_custom: rgb(0, 249, 255);
+$dark_custom: #1f1f1f;
+$darklight_custom: #272727;
+
+//ContactPage--------------------
+
+.contact-text {
+  font-size: 40px;
+  color: white;
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  a:hover{
+    font-weight: bold;
+    color: $purple_custom;
+    animation: rainbow 10s linear;
+		animation-iteration-count: infinite;
+  }
+}
+
+@keyframes rainbow{
+  100%,0%{
+    color: $cian_custom;
+  }
+  25%,75%{
+    color:  $purple_custom;
+  }
+}
 
 //media handler-------------------------
 @media screen and (max-width: 320px) {
@@ -256,6 +294,8 @@ body{
     height: 1500px; /* Used in this example to enable scrolling */ 
   }
 
+ 
+
 }
 
 .row{
@@ -287,25 +327,10 @@ body{
   .fab-container{
     display: flex;
   }
+  .contact-text{
+    font-size: 20px;
+  }
  
 }
-@media screen and (max-width: 900px) {
-
-}
-
-@media screen and (max-width: 1024px) {
-
-}
-
-@media screen and (max-width: 1200px) {
-  
-}
 
 
-//COLORS
-
-$magenta_custom: rgb(250, 6, 252,);
-$purple_custom: rgb(158, 61, 255);
-$cian_custom: rgb(0, 249, 255);
-$dark_custom: #1f1f1f;
-$darklight_custom: #272727;
